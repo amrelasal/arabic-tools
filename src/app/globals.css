@@ -1,0 +1,30 @@
+:root{--bg:#f7f8fa;--card:#fff;--text:#1f2933;--muted:#616e7c;--line:#e4e7eb;--brand:#0f766e;--brand-d:#115e59}
+@media (prefers-color-scheme:dark){:root{--bg:#10151a;--card:#182026;--text:#e6ebef;--muted:#9aa5b1;--line:#2b353d;--brand:#14b8a6;--brand-d:#2dd4bf}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Cairo",system-ui,"Segoe UI",Tahoma,sans-serif;line-height:1.8}
+a{color:var(--brand);text-decoration:none}
+.container{max-width:880px;margin:0 auto;padding:16px}
+.header{border-bottom:1px solid var(--line);background:var(--card)}
+.header .container{display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:800;font-size:1.2rem}
+h1{font-size:1.6rem;margin:.5rem 0}
+h2{font-size:1.2rem;margin:1.5rem 0 .5rem}
+.lead{color:var(--muted);margin:0 0 1rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:24px}
+textarea{width:100%;min-height:150px;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--text);font:inherit;resize:vertical}
+.btn{display:inline-block;margin:8px 0 0 8px;padding:8px 18px;border:0;border-radius:8px;background:var(--brand);color:#fff;font:inherit;cursor:pointer}
+.btn:hover{background:var(--brand-d)}
+.btn.alt{background:transparent;color:var(--brand);border:1px solid var(--brand)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.tool{display:block;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;color:var(--text)}
+.tool:hover{border-color:var(--brand)}
+.tool b{display:block;color:var(--brand)}
+.tool span{color:var(--muted);font-size:.9rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin-top:12px}
+.stat{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px;text-align:center}
+.stat b{display:block;font-size:1.4rem;color:var(--brand)}
+.opts label{display:block}
+details{border-bottom:1px solid var(--line);padding:8px 0}
+summary{cursor:pointer;font-weight:600}
+.footer{color:var(--muted);text-align:center;padding:24px;font-size:.9rem}
+.related a{margin-left:12px}
