@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { categories } from "@/lib/tools";
+import { guides } from "@/lib/guides";
 
 export interface Faq { q: string; a: string }
 
@@ -28,6 +29,13 @@ export default function ToolShell({
       <h1>{title}</h1>
       <p className="lead">{intro}</p>
       <section className="card">{children}</section>
+      {guides[slug] && (
+        <section className="guide">
+          <h2>كيف تستخدم الأداة</h2>
+          <ol>{guides[slug].steps.map((st) => <li key={st}>{st}</li>)}</ol>
+          {guides[slug].example && <p><b>مثال:</b> {guides[slug].example}</p>}
+        </section>
+      )}
       {article && <section>{article}</section>}
       {faq.length > 0 && (
         <section>

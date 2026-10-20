@@ -57,3 +57,7 @@ label{display:block;font-size:.9rem;color:var(--muted);margin-bottom:2px}
   .cert-print,.cert-print *{visibility:visible}
   .cert-print{position:fixed;inset:0;margin:0;min-width:0;width:100vw;height:100vh;aspect-ratio:auto;border-width:14px}
 }
+.guide ol{padding-right:20px}
+.guide li{margin-bottom:4px}
+.footer-links{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:8px}
+.prose p,.prose li{max-width:70ch}

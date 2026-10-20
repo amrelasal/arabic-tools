@@ -27,7 +27,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </header>
         {children}
-        <footer className="footer">جميع الأدوات تعمل داخل متصفحك ولا يتم رفع نصوصك لأي خادم.</footer>
+        <footer className="footer">
+          <nav className="footer-links">
+            <Link href="/about">من نحن</Link>
+            <Link href="/privacy-policy">سياسة الخصوصية</Link>
+            <Link href="/contact">اتصل بنا</Link>
+          </nav>
+          <div>معظم الأدوات تعمل داخل متصفحك دون رفع نصوصك. التفاصيل في سياسة الخصوصية.</div>
+        </footer>
       </body>
     </html>
   );
