@@ -17,7 +17,7 @@ npm run dev      # http://localhost:3000
 3. تظهر تلقائيًا في الرئيسية والـ sitemap.
 
 ## ميزة إضافة التشكيل
-تعمل عبر `/api/tashkeel` وتحتاج مفتاح Anthropic API:
+تعمل عبر `/api/tashkeel` وتحتاج مفتاح API لأحد المزودين: Google Gemini (طبقة مجانية، أولوية) أو Anthropic. للمفتاح المجاني: aistudio.google.com/apikey ثم أضفه في Vercel باسم `GEMINI_API_KEY`. لـ Anthropic:
 1. أنشئ مفتاحًا من console.anthropic.com (حساب منفصل عن اشتراك Claude).
 2. في Vercel: Settings ← Environment Variables ← أضف `ANTHROPIC_API_KEY` ثم Redeploy.
 3. حدّد سقف إنفاق شهريًا من لوحة Anthropic لحماية نفسك من الاستخدام الزائد.
