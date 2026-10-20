@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { allTools } from "@/lib/tools";
+import { categories } from "@/lib/tools";
 
 export interface Faq { q: string; a: string }
 
@@ -9,7 +9,10 @@ export default function ToolShell({
   slug: string; title: string; intro: string; children: React.ReactNode;
   faq?: Faq[]; article?: React.ReactNode;
 }) {
-  const related = allTools.filter((t) => t.slug !== slug);
+  const mine = categories.find((c) => c.tools.some((t) => t.slug === slug));
+  const others = categories.flatMap((c) => c.tools).filter((t) => t.slug !== slug);
+  const same = mine ? mine.tools.filter((t) => t.slug !== slug) : [];
+  const related = [...same, ...others.filter((t) => !same.includes(t))].slice(0, 8);
   const jsonLd = faq.length
     ? {
         "@context": "https://schema.org",
