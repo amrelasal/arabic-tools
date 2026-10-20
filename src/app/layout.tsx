@@ -5,7 +5,7 @@ import { SITE_NAME, SITE_URL } from "@/lib/tools";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  verification: { google: "PDjcnwJmp4sFnAz4kz-f0kERH37ktShCRdI-JfWhv_I" },
+  <meta name="google-site-verification" content="PDjcnwJmp4sFnAz4kz-f0kERH37ktShCRdI-JfWhv_I" />
   title: { default: `${SITE_NAME} | مركز أدوات النصوص والحاسبات`, template: `%s | ${SITE_NAME}` },
   description: "أدوات عربية مجانية: إزالة التشكيل، تحويل الأرقام، عداد الكلمات، تنظيف النصوص وغيرها.",
   openGraph: { locale: "ar_AR", type: "website", siteName: SITE_NAME },
