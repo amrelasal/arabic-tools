@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { GREG_MONTHS } from "@/lib/hijri";
 import { parseISO } from "@/lib/dates";
+import { printPage } from "@/lib/print";
 
 const TYPES: Record<string, { title: string; lead: string; reason: string }> = {
   thanks: { title: "شهادة شكر وتقدير", lead: "تتقدم {org} بخالص الشكر والتقدير إلى", reason: "وذلك تقديرًا لجهوده المتميزة وعطائه المخلص" },
@@ -71,7 +72,7 @@ export default function CertificateTool() {
           </div>
         </div>
       </div>
-      <button className="btn" onClick={() => window.print()}>طباعة / حفظ كملف PDF</button>
+      <button className="btn" onClick={() => printPage("landscape")}>طباعة / حفظ كملف PDF</button>
       <p className="note">من نافذة الطباعة اختر «حفظ كملف PDF» واجعل الاتجاه أفقيًا، ثم أزل خيار «الرأس والتذييل» إن ظهر.</p>
     </>
   );

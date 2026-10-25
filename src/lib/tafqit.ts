@@ -39,7 +39,8 @@ const groupWithScale = (g: number, idx: number, plain: boolean) => {
   if (g === 1) return sc.s;
   if (g === 2) return sc.d;
   if (g > 100 && (r === 1 || r === 2)) return `${HUNDREDS[Math.floor(g / 100)]} و${r === 1 ? sc.s : sc.d}`;
-  const body = below1000(g, "m");
+  let body = below1000(g, "m");
+  if (g === 200) body = "مائتا"; // تسقط نون المثنى عند الإضافة: مائتا ألف
   if (r >= 3 && r <= 10) return `${body} ${sc.p}`;
   return `${body} ${r >= 11 && !plain ? sc.a : sc.s}`;
 };
@@ -68,7 +69,9 @@ const phrase = (n: bigint, u: Unit): string => {
   if (n > 2n && (r === 1 || r === 2)) {
     return `${integerToWords(n - BigInt(r), u.g, false)} و${r === 1 ? `${u.s} ${u.g === "m" ? "واحد" : "واحدة"}` : u.d}`;
   }
-  const w = integerToWords(n, u.g, true);
+  let w = integerToWords(n, u.g, true);
+  // تسقط نون المثنى عند إضافته مباشرة إلى المعدود: مائتا جنيه، ألفا جنيه
+  if (r === 0) w = w.replace(/(مائت|ألف|مليون|مليار|تريليون)ان$/, "$1ا");
   if (r >= 3 && r <= 10) return `${w} ${u.p}`;
   return `${w} ${r === 0 ? u.s : u.acc}`;
 };

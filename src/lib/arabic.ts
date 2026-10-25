@@ -40,3 +40,13 @@ export const countSentences = (s: string) =>
 
 export const countParagraphs = (s: string) =>
   s.split(/\n\s*\n/).filter((x) => x.trim().length > 0).length;
+
+// توحيد النص لأغراض البحث والمقارنة (تجاهل التشكيل والتطويل واختلاف الهمزات)
+export const normalizeSearch = (s: string) =>
+  s
+    .replace(/[\u064B-\u065F\u0670\u0640]/g, "")
+    .replace(/[أإآٱ]/g, "ا")
+    .replace(/ى/g, "ي")
+    .replace(/ة/g, "ه")
+    .toLowerCase()
+    .trim();
