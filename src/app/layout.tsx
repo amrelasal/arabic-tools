@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
 import { SITE_NAME, SITE_URL } from "@/lib/tools";
+import CatNav from "@/components/CatNav";
 
 const ADSENSE = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
 
@@ -29,17 +30,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className="header">
           <div className="container">
             <Link href="/" className="logo">{SITE_NAME}</Link>
-            <Link href="/">كل الأدوات</Link>
+            <Link href="/blog" className="hdr-link">المدونة</Link>
           </div>
         </header>
+        <CatNav />
         {children}
         <footer className="footer">
           <nav className="footer-links">
             <Link href="/about">من نحن</Link>
+            <Link href="/blog">المدونة</Link>
             <Link href="/privacy-policy">سياسة الخصوصية</Link>
             <Link href="/contact">اتصل بنا</Link>
+            <Link href="/credits">حقوق وتراخيص</Link>
           </nav>
-          <div>معظم الأدوات تعمل داخل متصفحك دون رفع نصوصك. التفاصيل في سياسة الخصوصية.</div>
+          <div>أدواتنا تعمل داخل متصفحك دون رفع نصوصك. التفاصيل في سياسة الخصوصية.</div>
         </footer>
       </body>
     </html>
