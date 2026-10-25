@@ -17,9 +17,8 @@ npm run dev      # http://localhost:3000
 3. تظهر تلقائيًا في الرئيسية والـ sitemap.
 
 ## ميزة إضافة التشكيل
-تعمل عبر `/api/tashkeel` وتحتاج مفتاح API لأحد المزودين: Google Gemini (طبقة مجانية، أولوية) أو Anthropic. للمفتاح المجاني: aistudio.google.com/apikey ثم أضفه في Vercel باسم `GEMINI_API_KEY`. لـ Anthropic:
-1. أنشئ مفتاحًا من console.anthropic.com (حساب منفصل عن اشتراك Claude).
-2. في Vercel: Settings ← Environment Variables ← أضف `ANTHROPIC_API_KEY` ثم Redeploy.
-3. حدّد سقف إنفاق شهريًا من لوحة Anthropic لحماية نفسك من الاستخدام الزائد.
+تعمل داخل المتصفح بنموذج libtashkeel (WebAssembly) ملفه في `public/tashkeel/`، ولا تحتاج مفتاح API ولا خادمًا.
 
-بدون المفتاح تعمل بقية الأدوات، وتظهر رسالة "غير مفعّلة" في تبويب إضافة التشكيل.
+## المقالات والنص تحت الأدوات
+- المقالات: ملفات Markdown في `src/content/articles/` (العنوان والوصف والتاريخ في أعلى الملف).
+- نص الشرح تحت الأداة: ملف باسم الأداة في `src/content/tools/<slug>.md`.
