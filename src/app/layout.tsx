@@ -3,6 +3,7 @@ import Link from "next/link";
 import "./globals.css";
 import { SITE_NAME, SITE_URL } from "@/lib/tools";
 import CatNav from "@/components/CatNav";
+import { Analytics } from "@vercel/analytics/next";
 
 const ADSENSE = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
 
@@ -45,6 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </nav>
           <div>أدواتنا تعمل داخل متصفحك دون رفع نصوصك. التفاصيل في سياسة الخصوصية.</div>
         </footer>
+        <Analytics />
       </body>
     </html>
   );
